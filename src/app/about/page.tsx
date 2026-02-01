@@ -4,7 +4,7 @@ export default function About() {
       <h1 className="text-4xl font-bold">About Me</h1>
       <div className="mt-8 space-y-6 text-gray-400 leading-relaxed">
         <p>
-          My name is Gustavo Bastos. I was born in brazil and I&apos;m currently on my journey to becoming a software developer.
+          My name is Gustavo Bastos. I was born in Brazil and I&apos;m currently on my journey to becoming a Software Developer.
         </p>
         <p>
           I&apos;m passionate about web technologies, open-source software, and building things that live on the internet. I love watching coding videos, exploring new frameworks, and traveling to new places.
