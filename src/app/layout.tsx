@@ -15,8 +15,16 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Gustavo Bastos | Portfolio",
-  description: "Personal portfolio of Gustavo Bastos - Software Developer",
+  title: "Gustavo Bastos | Software Developer",
+  description: "Personal portfolio of Gustavo Bastos - a Software Developer from Brazil passionate about web technologies, React, Next.js, and TypeScript.",
+  openGraph: {
+    title: "Gustavo Bastos | Software Developer",
+    description: "Personal portfolio of Gustavo Bastos - a Software Developer from Brazil passionate about web technologies, React, Next.js, and TypeScript.",
+    url: "https://gustavo-portfolio.vercel.app/",
+    siteName: "Gustavo Bastos Portfolio",
+    locale: "en_US",
+    type: "website",
+  },
 };
 
 export default function RootLayout({
