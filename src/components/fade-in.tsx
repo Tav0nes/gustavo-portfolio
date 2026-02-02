@@ -1,32 +1,15 @@
 "use client";
-import { useEffect, useRef, useState } from "react";
+import { motion } from "motion/react";
 
 export default function FadeIn({ children }: { children: React.ReactNode }) {
-  const ref = useRef<HTMLDivElement>(null); 
-  const [isVisible, setIsVisible] = useState(false);
-
-  useEffect(() => { 
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-          observer.unobserve(entry.target);
-        }
-      },
-      { threshold: 0.1 }
-    );
-
-    if (ref.current) {
-      observer.observe(ref.current);
-    }
-
-    return () => observer.disconnect();
-  }, []);
-
   return (
-    <div ref={ref} className={`transition-all duration-700 ${ isVisible ? "translate-y-0 opacity-100 " : "translate-y-8 opacity-0 "}`}
+    <motion.div
+      initial={{ opacity: 0, y: 32 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.1 }}
+      transition={{ duration: 0.7 }}
     >
       {children}
-    </div>
+    </motion.div>
   );
 }
