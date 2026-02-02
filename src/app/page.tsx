@@ -87,6 +87,31 @@ export default function Home() {
           </a>
         </div>
       </section>
+
+      {/* Contact Section */}
+      <section id="contact" className="mx-auto mt-24 mb-16 max-w-3xl text-center">
+        <p className="text-sm uppercase tracking-widest text-gray-500">Get In Touch</p>
+        <h2 className="mt-2 text-3xl font-bold">Contact</h2>
+        <p className="mx-auto mt-6 max-w-lg text-gray-400">
+          I&apos;m always open to new opportunities and connections. Feel free to reach out!
+        </p>
+        <div className="mt-8 flex justify-center gap-4">
+          <a
+            href="mailto:gustavoelhuaick@gmail.com"
+            className="rounded-full bg-blue-600 px-8 py-3 text-sm font-medium transition-colors hover:bg-blue-700"
+          >
+            Email Me
+          </a>
+          <a
+            href="https://www.linkedin.com/in/gustavoelhuaickaraujo/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="rounded-full border border-gray-700 px-8 py-3 text-sm font-medium transition-colors hover:border-gray-500"
+          >
+            LinkedIn
+          </a>
+        </div>
+      </section>
     </div>
   );
 }
