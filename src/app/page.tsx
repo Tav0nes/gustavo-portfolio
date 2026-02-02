@@ -5,7 +5,7 @@ export default function Home() {
     <div className="flex flex-1 flex-col items-center px-6">
 
       {/* Hero Section */}  
-      <section id="hero" className="max-w-2xl text-center">
+      <section id="hero" className="max-w-2xl pt-16 text-center">
         <p className="text-sm uppercase tracking-widest text-gray-500">
           Software Developer
         </p>
