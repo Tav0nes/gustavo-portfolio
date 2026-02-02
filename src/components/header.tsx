@@ -1,25 +1,31 @@
 "use client";
 import { useState } from 'react';
-import Link from 'next/link';
-import { usePathname } from 'next/navigation';
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
-  const pathname = usePathname();
 
   return (
-    <header className="w-full border-b border-gray-800 px-6 py-4">
+    <header className="sticky top-0 z-50 w-full border-b border-gray-800 bg-gray-950/80 px-6 py-4 backdrop-blur-md">
       <nav className="mx-auto flex max-w-5xl items-center justify-between">
-        <Link href="/" className="text-xl font-bold">
+        <a href="#hero" className="text-xl font-bold">
           GB
-        </Link>
+        </a>
         <div className="hidden gap-6 sm:flex">
-          <Link href="/" className={`transition-colors ${pathname === "/" ? "text-white" : "text-gray-400 hover:text-gray-300"}`}>
+          <a href="#hero" className="text-gray-400 transition-colors hover:text-white">
             Home
-          </Link>
-          <Link href="/about" className={`transition-colors ${pathname === "/about" ? "text-white" : "text-gray-400 hover:text-gray-300"}`}>
+          </a>
+          <a href="#about" className="text-gray-400 transition-colors hover:text-white">
             About
-          </Link>
+          </a>
+          <a href="#skills" className="text-gray-400 transition-colors hover:text-white">
+            Skills
+          </a>
+          <a href="#projects" className="text-gray-400 transition-colors hover:text-white">
+            Projects
+          </a>
+          <a href="#contact" className="text-gray-400 transition-colors hover:text-white">
+            Contact
+          </a>
         </div>
         <button className="sm:hidden" onClick={() => setIsOpen(!isOpen)}>
             ☰
@@ -29,12 +35,21 @@ export default function Header() {
       {isOpen && (
         <div className="border-t border-gray-800 px-6 py-4 sm:hidden">
           <div className="flex flex-col gap-4">
-            <Link href="/" onClick={() => setIsOpen(false)} className={`transition-colors ${pathname === "/" ? "text-white" : "text-gray-400 hover:text-gray-300"}`}>
+            <a href="#hero" onClick={() => setIsOpen(false)} className="text-gray-400 transition-colors hover:text-white">
               Home
-            </Link>
-            <Link href="/about" onClick={() => setIsOpen(false)} className={`transition-colors ${pathname === "/about" ? "text-white" : "text-gray-400 hover:text-gray-300"}`}>
+            </a>
+            <a href="#about" onClick={() => setIsOpen(false)} className="text-gray-400 transition-colors hover:text-white">
               About
-            </Link>
+            </a>
+            <a href="#skills" onClick={() => setIsOpen(false)} className="text-gray-400 transition-colors hover:text-white">
+              Skills
+            </a>
+            <a href="#projects" onClick={() => setIsOpen(false)} className="text-gray-400 transition-colors hover:text-white">
+              Projects
+            </a>
+            <a href="#contact" onClick={() => setIsOpen(false)} className="text-gray-400 transition-colors hover:text-white">
+              Contact
+            </a>
           </div>
         </div>
       )}
