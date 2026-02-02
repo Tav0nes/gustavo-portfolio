@@ -2,6 +2,8 @@
 export default function Home() {
   return (
     <div className="flex flex-1 flex-col items-center px-6">
+
+      {/* Hero Section */}  
       <section id="hero" className="max-w-2xl text-center">
         <p className="text-sm uppercase tracking-widest text-gray-500">
           Software Developer
@@ -23,6 +25,8 @@ export default function Home() {
           </a>
         </div>
       </section>
+
+      {/* About Section */}
       <section id="about" className="mx-auto mt-24 max-w-3xl text-left">
         <h2 className="text-3xl font-bold">About Me</h2>
         <div className="mt-8 space-y-6 leading-relaxed text-gray-400">
@@ -39,6 +43,48 @@ export default function Home() {
             <span className="text-white font-medium">TypeScript</span>, and{" "}
             <span className="text-white font-medium">Tailwind CSS</span>.
           </p>
+        </div>
+      </section>
+
+      {/* Skills Section */}
+      <section id="skills" className="mx-auto mt-24 max-w-3xl">
+        <p className="text-sm uppercase tracking-widest text-gray-500">Skills</p>
+        <h2 className="mt-2 text-3xl font-bold">Tech Stack</h2>
+        <div className="mt-8 flex flex-wrap gap-3">
+          {["HTML", "CSS", "JavaScript", "TypeScript", "React", "Next.js", "Tailwind CSS", "Git"].map(
+            (tech) => (
+              <span 
+                key={tech} 
+                className="rounded-full border border-gray-700 px-4 py-2 text-sm text-gray-300 transition-colors hover:border-gray-500 hover:text-white"
+              >
+                {tech}
+              </span>
+            )  
+          )}
+        </div>
+      </section>
+      
+      {/* Projects Section */}
+      <section id="projects" className="mx-auto mt-24 max-w-3xl">
+        <p className="text-sm uppercase tracking-widest text-gray-500">Portfolio</p>
+        <h2 className="mt-2 text-3xl font-bold">Projects</h2>
+        <div className="mt-8 grid gap-6 sm:grid-cols-2">
+          <a 
+            href="https://github.com/Tav0nes/gustavo-portfolio" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="rounded-lg border border-gray-800 p-6 transition-colors hover:border-gray-600"
+          >
+            <h3 className="text-xl font-semibold">Developer Portfolio</h3>
+            <p className="mt-2 text-sm text-gray-400">My personal portfolio built with Next.js, TypeScript, and Tailwind CSS. Features responsive design and smooth scroll navigation.</p>
+            <div className="mt-4 flex flex-wrap gap-2">
+              {["Next.js", "TypeScript", "Tailwind"].map((tag) => (
+                <span key={tag} className="rounded-full bg-gray-800 px-3 py-1 text-xs text-gray-400">
+                  {tag}
+                </span>
+              ))}
+            </div>
+          </a>
         </div>
       </section>
     </div>
