@@ -28,7 +28,7 @@ export default function Header() {
           </a>
         </div>
         <button className="sm:hidden" onClick={() => setIsOpen(!isOpen)}>
-            ☰
+            {isOpen ? "✕" : "☰"}
         </button>
       </nav>
 
