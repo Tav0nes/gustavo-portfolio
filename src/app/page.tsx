@@ -1,4 +1,5 @@
 import FadeIn from "@/components/fade-in";
+import { projects } from "@/data/projects";
 
 export default function Home() {
   return (
@@ -75,22 +76,27 @@ export default function Home() {
           <p className="text-sm uppercase tracking-widest text-gray-500">Portfolio</p>
           <h2 className="mt-2 text-3xl font-bold">Projects</h2>
           <div className="mt-8 grid gap-6 sm:grid-cols-2">
-            <a 
-              href="https://github.com/Tav0nes/gustavo-portfolio" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="rounded-lg border border-gray-800 p-6 transition-colors hover:border-gray-600"
-            >
-              <h3 className="text-xl font-semibold">Developer Portfolio</h3>
-              <p className="mt-2 text-sm text-gray-400">My personal portfolio built with Next.js, TypeScript, and Tailwind CSS. Features responsive design and smooth scroll navigation.</p>
-              <div className="mt-4 flex flex-wrap gap-2">
-                {["Next.js", "TypeScript", "Tailwind"].map((tag) => (
-                  <span key={tag} className="rounded-full bg-gray-800 px-3 py-1 text-xs text-gray-400">
-                    {tag}
-                  </span>
-                ))}
-              </div>
-            </a>
+            {projects.map((project) => (
+              <a 
+                key={project.title}
+                href={project.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="rounded-lg border border-gray-800 p-6 transition-colors hover:border-gray-600"
+              >
+                <h3 className="text-xl font-semibold">{project.title}</h3>
+                <p className="mt-2 text-sm text-gray-400">{project.description}</p>
+                <div className="mt-4 flex flex-wrap gap-2">
+                  {project.tags.map((tag) => (
+                    <span 
+                      key={tag} 
+                      className="rounded-full bg-gray-800 px-3 py-1 text-xs text-gray-400">
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+              </a>
+            ))}
           </div>
         </section>
       </FadeIn>
