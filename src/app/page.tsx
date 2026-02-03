@@ -1,6 +1,7 @@
 import FadeIn from "@/components/fade-in";
 import { projects } from "@/data/projects";
 import ScrambleText from "@/components/scramble-text";
+import ProjectCard from "@/components/project-card";
 
 export default function Home() {
   return (
@@ -45,7 +46,7 @@ export default function Home() {
           <p className="text-sm uppercase tracking-widest text-muted-strong">Skills</p>
           <h2 className="mt-2 text-3xl font-bold">Tech Stack</h2>
           <div className="mt-8 flex flex-wrap gap-3">
-            {["HTML", "CSS", "JavaScript", "TypeScript", "React", "Next.js", "Tailwind CSS", "Git"].map(
+            {["HTML", "CSS", "JavaScript", "Python", "C++", "C#", "Git", "Next.js", "React"].map(
               (tech) => (
                 <span 
                   key={tech} 
@@ -66,25 +67,7 @@ export default function Home() {
           <h2 className="mt-2 text-3xl font-bold">Projects</h2>
           <div className="mt-8 grid gap-6 sm:grid-cols-2">
             {projects.map((project) => (
-              <a 
-                key={project.title}
-                href={project.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="rounded-lg border border-border p-6 transition-colors hover:border-border-hover hover:bg-surface"
-              >
-                <h3 className="text-xl font-semibold">{project.title}</h3>
-                <p className="mt-2 text-sm text-muted">{project.description}</p>
-                <div className="mt-4 flex flex-wrap gap-2">
-                  {project.tags.map((tag) => (
-                    <span 
-                      key={tag} 
-                      className="rounded-full bg-surface px-3 py-1 text-xs text-muted">
-                      {tag}
-                    </span>
-                  ))}
-                </div>
-              </a>
+              <ProjectCard key={project.title} project={project} />
             ))}
           </div>
         </section>
