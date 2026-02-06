@@ -10,9 +10,10 @@ export default function Home() {
       {/* Hero Section */}  
       <section id="hero" className="max-w-2xl pt-48 pb-48 text-center">
         <h1 className="mt-4 text-5xl font-bold leading-tight sm:text-7xl">
-          Hi! I&apos;m 
+          Hi, I&apos;m 
           <ScrambleText texts={[" Gustavo Bastos", " a Software Developer", " passionate about coding"]} />  
         </h1>
+        <h2 className="text-5xl text-accent font-bold">Full stack developer</h2>
         <p className="mx-auto mt-6 text-lg leading-relaxed text-muted">
           Welcome to my developer portfolio! Here, I showcase my projects, skills, and journey in the world of software development.
         </p>
