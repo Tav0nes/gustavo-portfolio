@@ -16,7 +16,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
       whileHover={{ y: -4, scale: 1.02 }}
       transition={{ type: "spring", stiffness: 300, damping: 20 }}
     >
-      <h3 className="text-xl font-semibold">{project.title}</h3>
+      <h3 className="text-xl font-semibold">{project.title}<span className="sr-only"> (opens in new tab)</span></h3>
       <p className="mt-2 text-sm text-muted">{project.description}</p>
       <div className="mt-4 flex flex-wrap gap-2">
         {project.tags.map((tag) => (

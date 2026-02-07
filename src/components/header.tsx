@@ -1,9 +1,17 @@
 "use client";
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import ThemeToggle from './theme-toggle';
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
+
+  useEffect(() => {
+    function handleEscape(event: KeyboardEvent) {
+      if (event.key === "Escape") setIsOpen(false);
+    }
+    document.addEventListener("keydown", handleEscape);
+    return () => document.removeEventListener("keydown", handleEscape);
+  }, []);
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border bg-background/80 px-6 py-4 backdrop-blur-md">
@@ -12,25 +20,25 @@ export default function Header() {
           GB
         </a>
         <div className="hidden gap-6 sm:flex">
-          <a href="#hero" className="text-muted transition-colors hover:text-highlight">
+          <a href="#hero" className="border border-border p-2 rounded-full text-muted transition-colors hover:text-highlight hover:border-border-hover">
             Home
           </a>
-          <a href="#about" className="text-muted transition-colors hover:text-highlight">
+          <a href="#about" className="border border-border p-2 rounded-full text-muted transition-colors hover:text-highlight hover:border-border-hover">
             About
           </a>
-          <a href="#skills" className="text-muted transition-colors hover:text-highlight">
+          <a href="#skills" className="border border-border p-2 rounded-full text-muted transition-colors hover:text-highlight hover:border-border-hover">
             Skills
           </a>
-          <a href="#projects" className="text-muted transition-colors hover:text-highlight">
+          <a href="#projects" className="border border-border p-2 rounded-full text-muted transition-colors hover:text-highlight hover:border-border-hover">
             Projects
           </a>
-          <a href="#contact" className="text-muted transition-colors hover:text-highlight">
+          <a href="#contact" className="border border-border p-2 rounded-full text-muted transition-colors hover:text-highlight hover:border-border-hover">
             Contact
           </a>
         </div>
         <div className="flex items-center gap-4">
           <ThemeToggle />
-          <button className="sm:hidden" onClick={() => setIsOpen(!isOpen)}>
+          <button className="sm:hidden" onClick={() => setIsOpen(!isOpen)} aria-label={isOpen ? "Close menu" : "Open menu"}>
             {isOpen ? "✕" : "☰"}
           </button>
         </div>

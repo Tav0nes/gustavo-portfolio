@@ -16,7 +16,8 @@ export default function BackToTop() {
   return (
     <a
       href="#hero"
-      className={`fixed bottom-6 right-6 z-50 rounded-full bg-gray-800 p-3 text-sm transition-all hover:bg-gray-700 ${ show ? "opacity-100" : "pointer-events-none opacity-0"
+      aria-label="Back to top"
+      className={`fixed bottom-6 right-6 z-50 rounded-full bg-surface border border-border p-3 text-sm transition-all hover:border-border-hover hover:bg-accent-hover ${ show ? "opacity-100" : "pointer-events-none opacity-0"
       }`}
     >
       ↑

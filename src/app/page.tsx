@@ -13,7 +13,7 @@ export default function Home() {
           Hi, I&apos;m 
           <ScrambleText texts={[" Gustavo Bastos", " a Software Developer", " passionate about coding"]} />  
         </h1>
-        <h2 className="text-5xl text-accent font-bold">Full stack developer</h2>
+        <p className="text-5xl text-accent font-bold">Full stack developer</p>
         <p className="mx-auto mt-6 text-lg leading-relaxed text-muted">
           Welcome to my developer portfolio! Here, I showcase my projects, skills, and journey in the world of software development.
         </p>
@@ -95,7 +95,7 @@ export default function Home() {
               rel="noopener noreferrer"
               className="rounded-full border border-border px-8 py-3 text-sm font-medium transition-colors hover:border-border-hover"
             >
-              LinkedIn
+              LinkedIn<span className="sr-only"> (opens in new tab)</span>
             </a>
           </div>
         </section>

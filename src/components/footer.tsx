@@ -7,13 +7,13 @@ export default function Footer() {
           target="_blank"
           rel="noopener noreferrer"
           className="text-muted transition-colors hover:text-highlight">
-            GitHub
+            GitHub<span className="sr-only"> (opens in new tab)</span>
           </a>
           <a href="https://www.linkedin.com/in/gustavoelhuaickaraujo/"
           target="_blank"
           rel="noopener noreferrer"
           className="text-muted transition-colors hover:text-highlight">
-            LinkedIn
+            LinkedIn<span className="sr-only"> (opens in new tab)</span>
           </a>  
           <a href="mailto:gustavoelhuaick@gmail.com"
           className="text-muted transition-colors hover:text-highlight">
