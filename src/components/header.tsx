@@ -1,5 +1,6 @@
 "use client";
 import { useState } from 'react';
+import ThemeToggle from './theme-toggle';
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
@@ -27,9 +28,12 @@ export default function Header() {
             Contact
           </a>
         </div>
-        <button className="sm:hidden" onClick={() => setIsOpen(!isOpen)}>
+        <div className="flex items-center gap-4">
+          <ThemeToggle />
+          <button className="sm:hidden" onClick={() => setIsOpen(!isOpen)}>
             {isOpen ? "✕" : "☰"}
-        </button>
+          </button>
+        </div>
       </nav>
 
       {isOpen && (
