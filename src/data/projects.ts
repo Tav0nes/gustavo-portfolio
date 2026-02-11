@@ -26,8 +26,8 @@ export const projects: Project[] = [
   },
   {
     title: "Med-Q Queue Management",
-    description: "A queue management system for clinics to streamline patient flow and reduce wait times. Developed using Java and MySQL.",
+    description: "A queue management system for clinics to streamline patient flow and reduce wait times. Developed using JavaScript, Python, and PostgreSQL.",
     url: "https://github.com/neutral207/medq/tree/dev",
-    tags: ["JavaScript", "Python", "PostGreSQL"],
+    tags: ["JavaScript", "Python", "PostgreSQL"],
   },
 ];
