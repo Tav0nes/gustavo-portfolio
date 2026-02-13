@@ -5,12 +5,13 @@ import ProjectCard from "@/components/project-card";
 import ContactForm from "@/components/contact-form";
 import TechMarquee from "@/components/tech-marquee";
 import Image from "next/image";
+import { BackgroundBeamsWithCollision } from "@/components/ui/background-beams-with-collision";
 
 export default function Home() {
   return (
-    <div className="flex flex-1 flex-col items-center px-6">
-
-      {/* Hero Section */}  
+    <div className="flex flex-1 flex-col items-center px-6 relative z-10">
+    <BackgroundBeamsWithCollision className="!fixed inset-0 !h-full z-0 pointer-events-none" />
+      {/* Hero Section */}
       <section id="hero" className="max-w-[1080px] w-full pt-32 pb-32">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           {/* Left column - text */}
@@ -40,7 +41,7 @@ export default function Home() {
               alt="Code editor screenshot"
               width={600}
               height={400}
-              className="rounded-md shadow-2xl"
+              className="rounded-md shadow-[0_0_40px_rgba(91,140,184,0.3)] border border-border"
               priority
             />
           </div>
@@ -72,7 +73,7 @@ export default function Home() {
 
       {/* Skills Section */}
       <FadeIn>
-        <section id="skills" className="mx-auto mt-24 max-w-[1080px]">
+        <section id="skills" className="mx-auto mt-24 max-w-[1080px] w-full">
           <p className="text-sm uppercase tracking-widest text-muted-strong">Skills</p>
           <h2 className="mt-2 text-3xl font-bold">Tech Stack</h2>
           <TechMarquee />

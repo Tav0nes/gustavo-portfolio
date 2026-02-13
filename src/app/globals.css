@@ -21,6 +21,8 @@
   /* Lighter Pickled Bluewood */
   --highlight: #f0ece8;
   /* Warm white */
+  --beam: #5b8cb8;
+  /* Accent blue beam */
 }
 
 [data-theme="light"] {
@@ -44,6 +46,7 @@
   /* Subtle warm card bg */
   --highlight: #1a2a3a;
   /* Deep navy */
+  --beam: #2c5580;
 }
 
 @theme {
@@ -57,6 +60,7 @@
   --color-border-hover: var(--border-hover);
   --color-surface: var(--surface);
   --color-highlight: var(--highlight);
+  --color-beam: var(--beam);
 }
 
 body {
