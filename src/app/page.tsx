@@ -1,29 +1,46 @@
+"use client";
 import FadeIn from "@/components/fade-in";
+import { motion } from "motion/react";
 import { projects } from "@/data/projects";
 import ScrambleText from "@/components/scramble-text";
 import ProjectCard from "@/components/project-card";
 import ContactForm from "@/components/contact-form";
 import TechMarquee from "@/components/tech-marquee";
 import Image from "next/image";
-import { BackgroundBeamsWithCollision } from "@/components/ui/background-beams-with-collision";
 
 export default function Home() {
   return (
     <div className="flex flex-1 flex-col items-center px-6 relative z-10">
-    <BackgroundBeamsWithCollision className="!fixed inset-0 !h-full z-0 pointer-events-none" />
       {/* Hero Section */}
       <section id="hero" className="max-w-[1080px] w-full pt-32 pb-32">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           {/* Left column - text */}
           <div>
-            <h1 className="text-5xl font-bold leading-tight sm:text-7xl">
+            <motion.h1 
+                className="text-5xl font-bold leading-tight sm:text-7xl"
+                initial={{ opacity: 0, y: 24 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0 }}
+            >
               Hello, I&apos;m 
               <ScrambleText texts={[" Gustavo Bastos", " a Software Developer"]} />  
-            </h1>
-            <p className="text-3xl text-accent font-bold mt-4">Full stack developer</p>
-            <p className="mt-6 text-lg leading-relaxed text-muted">
+            </motion.h1>
+            <motion.p 
+              className="text-3xl text-accent font-bold mt-4"
+              initial={{ opacity: 0, y: 24 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.15 }}
+            >
+              Full stack developer
+            </motion.p>
+            <motion.p 
+              className="mt-6 text-lg leading-relaxed text-muted"
+              initial={{ opacity: 0, y: 24 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+            >
               Welcome to my developer portfolio! Here, I showcase my projects, skills, and journey in the world of software development.
-            </p>
+            </motion.p>
             {/* CTA buttons */}
             <div className="mt-8 flex gap-4">
               <a href="#projects" className="rounded-md bg-accent px-6 py-3 text-sm font-medium transition-colors hover:border-border-hover">
